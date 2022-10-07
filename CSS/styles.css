@@ -177,20 +177,55 @@ p {
 
 .site-contacts {
   display: flex;
+  align-items: center;
   margin-left: auto;
 }
 
+.site-contacts .link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary-text-color);
+  fill: red;
+}
 .site-contacts .item + .item {
   margin-left: 50px;
 }
+
+.icon.mail {
+  display: block;
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  /* background-color: red; */
+  stroke: #000000;
+  fill: #2196f3;
+}
+
+.mail {
+  display: block;
+}
+
 /* .site-contacts .item:not(:last-child) {
     margin-right: 50px;
 } */
-.site-contacts .link {
-  /* display: block; */
-  color: var(--primary-text-color);
+
+/* .link.email::before,
+.link.tell::before {
+  content: "";
+  margin-right: 10px;
+  background-size: contain;
+}
+.link.email::before {
+  width: 16px;
+  height: 12px;
+  background-image: url(../images/SVG/mail.svg);
 }
 
+.link.tell::before {
+  width: 10px;
+  height: 16px;
+  background-image: url(../images/SVG/smartphone.svg);
+} */
 /* hero */
 
 .hero {
@@ -239,29 +274,41 @@ p {
   background-color: var(--main-background-color);
   color: var(--accent-color);
 }
-/* activity */
-.activity {
-  padding-top: 0px;
-}
 
-.activity .list {
-  display: flex;
-  justify-content: space-between;
-}
-
-.activity .img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-/* features */
 .feature-list {
   display: flex;
   justify-content: space-between;
 }
+
 .feature-item {
   width: 270px;
 }
+
+/* .feature-item::before {
+  display: block;
+  content: "";
+  margin-bottom: 30px;
+  height: 120px;
+  background-color: var(--secondary-background-color);
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+/* .feature-item.antenna::before {
+  background-image: url(../images/SVG/antenna.svg);
+}
+
+.feature-item.clock::before {
+  background-image: url(../images/SVG/clock.svg);
+}
+
+.feature-item.diagram::before {
+  background-image: url(../images/SVG/diagram.svg);
+}
+
+.feature-item.astronaut::before {
+  background-image: url(../images/SVG/astronaut.svg);
+} */
 
 .feature-list .title {
   margin-bottom: 10px;
@@ -280,6 +327,23 @@ p {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
+
+/* activity */
+.activity {
+  padding-top: 0px;
+}
+
+.activity .list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.activity .img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/* features */
 
 /* team */
 .team {
@@ -324,6 +388,7 @@ p {
 }
 
 .team-position {
+  margin-bottom: 16px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.187;
@@ -372,6 +437,33 @@ p {
 .filter-list .button.current {
   background-color: var(--accent-color);
   color: var(--white-color);
+}
+.team-block .list {
+  display: inline-flex;
+}
+
+.team-block .link:before {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 44px;
+  /* background-color: red; */
+
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid red;
+  border-radius: 50%;
+}
+
+.team-block .item:not(last-chield) {
+  margin-right: 10px;
+}
+
+.link.instagram::before {
+  background-image: url(../images/SVG/instagram.svg);
+}
+.link.twitter::before {
+  background-image: url(../images/SVG/instagram.svg);
 }
 
 /* Портфоліо */
