@@ -12,6 +12,7 @@
   --secondary-background-color: #f5f4fa;
   --hero-backgroun-color: #2f303a;
   --footer-background-color: #2f303a;
+  --backdrop-background-color: rgba(0, 0, 0, 0.2);
   /* logo */
   --blue-logo-color: #2196f3;
   --white-logo-color: #ffffff;
@@ -96,8 +97,19 @@ p {
   border-bottom: 1px solid #ececec;
 }
 
-.site-header.list {
-  display: flex;
+.site-header .item {
+  position: relative;
+}
+
+.emphasis::after {
+  content: " ";
+  position: absolute;
+  height: 4px;
+  bottom: -1px;
+  right: 0;
+  width: 100%;
+  background-color: #2196f3;
+  border-radius: 2px;
 }
 
 /* Logo */
@@ -364,10 +376,31 @@ p {
   justify-content: space-between;
 }
 
+.activity .item {
+  position: relative;
+}
+
 .activity .img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.activity .description {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  padding: 27px 0 27px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.14;
+
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white-color);
+  background: rgba(47, 48, 58, 0.8);
 }
 
 /* team */
@@ -545,6 +578,7 @@ p {
   display: block;
   margin-right: 30px;
   margin-bottom: 30px;
+  overflow: hidden;
 }
 
 .portfolio .card:nth-child(3n) {
@@ -701,4 +735,56 @@ p {
 .footer-social .link:focus {
   outline: none;
   background-color: var(--accent-color);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop-background-color);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+
+  background-color: var(--main-background-color);
+}
+
+.close-button {
+  position: inherit;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  top: 8px;
+  right: 8px;
+  justify-content: center;
+  align-items: center;
+
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.close-icon {
+  display: block;
+  width: 11px;
+  height: 11px;
+  fill: var(--footer-background-color);
+}
+
+.close-button:hover .close-icon {
+  fill: var(--accent-color);
 }
